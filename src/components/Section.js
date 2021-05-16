@@ -12,23 +12,24 @@ const Section = ({title, desc, backgroundImg, leftBtnText, rightBtnText}) => {
              </ItemText>
             </Fade>
 
-           <Fade bottom>
+
             <Buttons>
-            <ButtonGroup>
-                    <LeftButton>
-                        {leftBtnText}
-                    </LeftButton>
+                <Fade bottom>
+                    <ButtonGroup>
+                            <LeftButton>
+                                {leftBtnText}
+                            </LeftButton>
 
-                { rightBtnText &&
-                <RightButton>
-                    {rightBtnText}
-                </RightButton>
-                }
-            </ButtonGroup>
-
+                        { rightBtnText &&
+                        <RightButton>
+                            {rightBtnText}
+                        </RightButton>
+                        }
+                    </ButtonGroup>
+                </Fade>
             <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
-           </Fade>
+
         </Wrap>
 
     )
@@ -37,6 +38,7 @@ const Section = ({title, desc, backgroundImg, leftBtnText, rightBtnText}) => {
 export default Section;
 
 const Wrap = styled.div`
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   background-image:${props => `url("/images/${props.bgImage}")`};
